@@ -156,7 +156,7 @@ export default function App() {
       <Card.Title>
         {player1["firstName"] + " " + player1['lastName']}
       </Card.Title>
-      <Card.Img variant="top" src={`https://cdn.nba.com/headshots/nba/latest/1040x760/${picture1}.png`}/>
+      <Card.Img className={'pictures'} variant="top" src={`https://cdn.nba.com/headshots/nba/latest/1040x760/${picture1}.png`}/>
       <Card.Body>
         <div className={'inner_container'}>
           <div className={(player1['collegeName'] == player['collegeName']) ? 'correct' : 'inner_card'}>{player1['collegeName']}</div>
@@ -177,7 +177,7 @@ export default function App() {
     <Card.Title>
       {player2["firstName"] + " " + player2['lastName']}
     </Card.Title>
-    <Card.Img variant="top" src={`https://cdn.nba.com/headshots/nba/latest/1040x760/${picture2}.png`}/>
+    <Card.Img className={'pictures'} variant="top" src={`https://cdn.nba.com/headshots/nba/latest/1040x760/${picture2}.png`}/>
     <Card.Body>
       <div className={'inner_container'}>
       <div className={(player2['collegeName'] == player['collegeName']) ? 'correct' : 'inner_card'}>{player2['collegeName']}</div>
@@ -197,7 +197,7 @@ export default function App() {
     <Card.Title>
       {player3["firstName"] + " " + player3['lastName']}
     </Card.Title>
-    <Card.Img variant="top" src={`https://cdn.nba.com/headshots/nba/latest/1040x760/${picture3}.png`}/>
+    <Card.Img className={'pictures'} variant="top" src={`https://cdn.nba.com/headshots/nba/latest/1040x760/${picture3}.png`}/>
     <Card.Body>
       <div className={'inner_container'}>
       <div className={(player3['collegeName'] == player['collegeName']) ? 'correct' : 'inner_card'}>{player3['collegeName']}</div>
@@ -217,7 +217,7 @@ export default function App() {
     <Card.Title>
       {player4["firstName"] + " " + player4['lastName']}
     </Card.Title>
-    <Card.Img variant="top" src={`https://cdn.nba.com/headshots/nba/latest/1040x760/${picture4}.png`}/>
+    <Card.Img className={'pictures'} variant="top" src={`https://cdn.nba.com/headshots/nba/latest/1040x760/${picture4}.png`}/>
     <Card.Body>
       <div className={'inner_container'}>
       <div className={(player4['collegeName'] == player['collegeName']) ? 'correct' : 'inner_card'}>{player4['collegeName']}</div>
@@ -236,7 +236,7 @@ export default function App() {
     <Card.Title>
       {player5["firstName"] + " " + player5['lastName']}
     </Card.Title>
-    <Card.Img variant="top" src={`https://cdn.nba.com/headshots/nba/latest/1040x760/${picture5}.png`}/>
+    <Card.Img className={'pictures'} variant="top" src={`https://cdn.nba.com/headshots/nba/latest/1040x760/${picture5}.png`}/>
     <Card.Body>
       <div className={'inner_container'}>
       <div className={(player5['collegeName'] == player['collegeName']) ? 'correct' : 'inner_card'}>{player5['collegeName']}</div>
@@ -255,7 +255,7 @@ export default function App() {
     <Card.Title>
       {player6["firstName"] + " " + player6['lastName']}
     </Card.Title>
-    <Card.Img variant="top" src={`https://cdn.nba.com/headshots/nba/latest/1040x760/${picture6}.png`}/>
+    <Card.Img className={'pictures'} variant="top" src={`https://cdn.nba.com/headshots/nba/latest/1040x760/${picture6}.png`}/>
     <Card.Body>
       <div className={'inner_container'}>
       <div className={(player6['collegeName'] == player['collegeName']) ? 'correct' : 'inner_card'}>{player6['collegeName']}</div>
@@ -274,7 +274,7 @@ export default function App() {
     <Card.Title>
       {player7["firstName"] + " " + player7['lastName']}
     </Card.Title>
-    <Card.Img variant="top" src={`https://cdn.nba.com/headshots/nba/latest/1040x760/${picture7}.png`}/>
+    <Card.Img className={'pictures'} variant="top" src={`https://cdn.nba.com/headshots/nba/latest/1040x760/${picture7}.png`}/>
     <Card.Body>
       <div className={'inner_container'}>
       <div className={(player7['collegeName'] == player['collegeName']) ? 'correct' : 'inner_card'}>{player7['collegeName']}</div>
@@ -294,7 +294,7 @@ export default function App() {
     <Card.Title>
       {player8["firstName"] + " " + player8['lastName']}
     </Card.Title>
-    <Card.Img variant="top" src={`https://cdn.nba.com/headshots/nba/latest/1040x760/${picture8}.png`}/>
+    <Card.Img className={'pictures'} variant="top" src={`https://cdn.nba.com/headshots/nba/latest/1040x760/${picture8}.png`}/>
     <Card.Body>
       <div className={'inner_container'}>
       <div className={(player8['collegeName'] == player['collegeName']) ? 'correct' : 'inner_card'}>{player8['collegeName']}</div>
