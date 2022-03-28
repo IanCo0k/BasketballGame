@@ -37,6 +37,7 @@ export default function App() {
 
   const [guessed, setGuessed] = useState([]);
   const [player, setPlayer] = useState({});
+  const [playerPicture, setPlayerPicture] = useState('');
 
 
   //${response.data.league['standard'][i]['firstName']}
@@ -46,7 +47,8 @@ export default function App() {
       .then((response) => {
         let random = Math.random() * 585;
         random = Math.floor(random);
-        setPlayer(response.data.league['standard'][random])
+        setPlayer(response.data.league['standard'][random]);
+        setPlayerPicture(response.data.league['standard'][random]['personId']);
         console.log(response.data.league['standard'][random]);
         setDatabase(response.data.league["standard"]);
         for(var i=0; i<response.data.league['standard'].length; i++){
@@ -74,80 +76,87 @@ export default function App() {
   return (
   <>
     <div className={'container'}>
-      <h1>Wardell | NBA Player Guessing Game</h1>
-          <form className={'form'} onSubmit={(e) => {
-            e.preventDefault();
-            setValue("");
-          }}>
-          <Select value={{label: `${value}`}}onChange={e => setValue(e.label)} options={names}/>
-        <button onClick={()=>{
-          setLetsGo(true);
-          for(var i=0; i<database.length; i++){
-            if(database[i]['firstName'] === value.split(' ')[0] && database[i]['lastName'] === value.split(' ')[1]){
-              switch(guesses){
-                case 1:
-                setPicture1(database[i]['personId']);
-                setPlayer1(database[i]);
-                setGuessed(database[i]['personId']);
-                setGuesses(guesses + 1);
-                break;
+    <div className={'header_container'}>
+      <div className={'left-half'}>
+        <h1 className={'header_text'}>Wardell</h1>
+            <form className={'form'} onSubmit={(e) => {
+              e.preventDefault();
+              setValue("");
+            }}>
+            <Select value={{label: `${value}`}} onChange={e => setValue(e.label)} options={names} components={{ DropdownIndicator:() => null, IndicatorSeparator:() => null }}/>
+          <button className={'button'} onClick={()=>{
+            setLetsGo(true);
+            for(var i=0; i<database.length; i++){
+              if(database[i]['firstName'] === value.split(' ')[0] && database[i]['lastName'] === value.split(' ')[1]){
+                switch(guesses){
+                  case 1:
+                  setPicture1(database[i]['personId']);
+                  setPlayer1(database[i]);
+                  setGuessed(database[i]['personId']);
+                  setGuesses(guesses + 1);
+                  break;
 
-                case 2:
-                setPicture2(database[i]['personId']);
-                setPlayer2(database[i]);
-                setGuessed(guessed + database[i]['personId']);
-                setGuesses(guesses + 1);
-                break;
+                  case 2:
+                  setPicture2(database[i]['personId']);
+                  setPlayer2(database[i]);
+                  setGuessed(guessed + database[i]['personId']);
+                  setGuesses(guesses + 1);
+                  break;
 
-                case 3:
-                setPicture3(database[i]['personId']);
-                setPlayer3(database[i]);
-                setGuessed(guessed + database[i]['personId']);
-                setGuesses(guesses + 1);
-                break;
+                  case 3:
+                  setPicture3(database[i]['personId']);
+                  setPlayer3(database[i]);
+                  setGuessed(guessed + database[i]['personId']);
+                  setGuesses(guesses + 1);
+                  break;
 
-                case 4:
-                setPicture4(database[i]['personId']);
-                setPlayer4(database[i]);
-                setGuessed(guessed + database[i]['personId']);
-                setGuesses(guesses + 1);
-                break;
+                  case 4:
+                  setPicture4(database[i]['personId']);
+                  setPlayer4(database[i]);
+                  setGuessed(guessed + database[i]['personId']);
+                  setGuesses(guesses + 1);
+                  break;
 
-                case 5:
-                setPicture5(database[i]['personId']);
-                setPlayer5(database[i]);
-                setGuessed(guessed + database[i]['personId']);
-                setGuesses(guesses + 1);
-                break;
+                  case 5:
+                  setPicture5(database[i]['personId']);
+                  setPlayer5(database[i]);
+                  setGuessed(guessed + database[i]['personId']);
+                  setGuesses(guesses + 1);
+                  break;
 
-                case 6:
-                setPicture6(database[i]['personId']);
-                setPlayer6(database[i]);
-                setGuessed(guessed + database[i]['personId']);
-                setGuesses(guesses + 1);
-                break;
+                  case 6:
+                  setPicture6(database[i]['personId']);
+                  setPlayer6(database[i]);
+                  setGuessed(guessed + database[i]['personId']);
+                  setGuesses(guesses + 1);
+                  break;
 
-                case 7:
-                setPicture7(database[i]['personId']);
-                setPlayer7(database[i]);
-                setGuessed(guessed + database[i]['personId']);
-                setGuesses(guesses + 1);
-                break;
+                  case 7:
+                  setPicture7(database[i]['personId']);
+                  setPlayer7(database[i]);
+                  setGuessed(guessed + database[i]['personId']);
+                  setGuesses(guesses + 1);
+                  break;
 
-                case 8:
-                setPicture8(database[i]['personId']);
-                setPlayer8(database[i]);
-                setGuessed(guessed + database[i]['personId']);
-                setGuesses(guesses + 1);
-                break;
+                  case 8:
+                  setPicture8(database[i]['personId']);
+                  setPlayer8(database[i]);
+                  setGuessed(guessed + database[i]['personId']);
+                  setGuesses(guesses + 1);
+                  break;
 
-                default:
+                  default:
+                }
               }
             }
-          }
-          setValue('');
-        }}>Guess</button>
-        </form>
+            setValue('');
+          }}>Guess</button>
+          </form>
+          </div>
+          <div className={'right_half'}>
+            <img className={'blank_picture'} src={`https://cdn.nba.com/headshots/nba/latest/1040x760/${playerPicture}.png`}/>
+          </div>
+          </div>
     </div>
 
     <div className={'card_container'}>
@@ -192,7 +201,6 @@ export default function App() {
   }
 
   {guesses > 3 ?
-    <div className={'please'}>
     <Card className={'card'}>
     <Card.Title>
       {player3["firstName"] + " " + player3['lastName']}
@@ -207,7 +215,6 @@ export default function App() {
       </div>
     </Card.Body>
     </Card>
-    </div>
     :
     <Card className={'card'}><Card.Title>3</Card.Title></Card>
   }
