@@ -39,7 +39,271 @@ export default function App() {
   const [player, setPlayer] = useState({});
   const [playerPicture, setPlayerPicture] = useState('');
 
+  const [team, setTeam] = useState();
+  const [team2, setTeam2] = useState();
+  const [team3, setTeam3] = useState();
+  const [team4, setTeam4] = useState();
+  const [team5, setTeam5] = useState();
+  const [team6, setTeam6] = useState();
+  const [team7, setTeam7] = useState();
+  const [team8, setTeam8] = useState();
+
+  const [conference, setConference] = useState();
+
+  const [conference1, setConference1] = useState();
+  const [conference2, setConference2] = useState();
+  const [conference3, setConference3] = useState();
+  const [conference4, setConference4] = useState();
+  const [conference5, setConference5] = useState();
+  const [conference6, setConference6] = useState();
+  const [conference7, setConference7] = useState();
+  const [conference8, setConference8] = useState();
+
   const [correct, setCorrect] = useState(false);
+
+
+  let teamData = [
+  {
+    "teamId": 1610612737,
+    "abbreviation": "ATL",
+    "teamName": "Atlanta Hawks",
+    "simpleName": "Hawks",
+    "conference": "East",
+    "location": "Atlanta"
+  },
+  {
+    "teamId": 1610612738,
+    "abbreviation": "BOS",
+    "teamName": "Boston Celtics",
+    "simpleName": "Celtics",
+    "conference": "East",
+    "location": "Boston"
+  },
+  {
+    "teamId": 1610612751,
+    "abbreviation": "BKN",
+    "teamName": "Brooklyn Nets",
+    "simpleName": "Nets",
+    "conference": "East",
+    "location": "Brooklyn"
+  },
+  {
+    "teamId": 1610612766,
+    "abbreviation": "CHA",
+    "teamName": "Charlotte Hornets",
+    "simpleName": "Hornets",
+    "conference": "East",
+    "location": "Charlotte"
+  },
+  {
+    "teamId": 1610612741,
+    "abbreviation": "CHI",
+    "teamName": "Chicago Bulls",
+    "simpleName": "Bulls",
+    "conference": "East",
+    "location": "Chicago"
+  },
+  {
+    "teamId": 1610612739,
+    "abbreviation": "CLE",
+    "teamName": "Cleveland Cavaliers",
+    "simpleName": "Cavaliers",
+    "conference": "East",
+    "location": "Cleveland"
+  },
+  {
+    "teamId": 1610612742,
+    "abbreviation": "DAL",
+    "teamName": "Dallas Mavericks",
+    "simpleName": "Mavericks",
+    "conference": "West",
+    "location": "Dallas"
+  },
+  {
+    "teamId": 1610612743,
+    "abbreviation": "DEN",
+    "teamName": "Denver Nuggets",
+    "simpleName": "Nuggets",
+    "conference": "West",
+    "location": "Denver"
+  },
+  {
+    "teamId": 1610612765,
+    "abbreviation": "DET",
+    "teamName": "Detroit Pistons",
+    "simpleName": "Pistons",
+    "conference": "East",
+    "location": "Detroit"
+  },
+  {
+    "teamId": 1610612744,
+    "abbreviation": "GSW",
+    "teamName": "Golden State Warriors",
+    "simpleName": "Warriors",
+    "conference": "West",
+    "location": "Golden State"
+  },
+  {
+    "teamId": 1610612745,
+    "abbreviation": "HOU",
+    "teamName": "Houston Rockets",
+    "simpleName": "Rockets",
+    "conference": "West",
+    "location": "Houston"
+  },
+  {
+    "teamId": 1610612754,
+    "abbreviation": "IND",
+    "teamName": "Indiana Pacers",
+    "simpleName": "Pacers",
+    "conference": "East",
+    "location": "Indiana"
+  },
+  {
+    "teamId": 1610612746,
+    "abbreviation": "LAC",
+    "teamName": "Los Angeles Clippers",
+    "simpleName": "Clippers",
+    "conference": "West",
+    "location": "Los Angeles"
+  },
+  {
+    "teamId": 1610612747,
+    "abbreviation": "LAL",
+    "teamName": "Los Angeles Lakers",
+    "simpleName": "Lakers",
+    "conference": "West",
+    "location": "Los Angeles"
+  },
+  {
+    "teamId": 1610612763,
+    "abbreviation": "MEM",
+    "teamName": "Memphis Grizzlies",
+    "simpleName": "Grizzlies",
+    "conference": "West",
+    "location": "Memphis"
+  },
+  {
+    "teamId": 1610612748,
+    "abbreviation": "MIA",
+    "teamName": "Miami Heat",
+    "simpleName": "Heat",
+    "conference": "East",
+    "location": "Miami"
+  },
+  {
+    "teamId": 1610612749,
+    "abbreviation": "MIL",
+    "teamName": "Milwaukee Bucks",
+    "simpleName": "Bucks",
+    "conference": "East",
+    "location": "Milwaukee"
+  },
+  {
+    "teamId": 1610612750,
+    "abbreviation": "MIN",
+    "teamName": "Minnesota Timberwolves",
+    "simpleName": "Timberwolves",
+    "conference": "West",
+    "location": "Minnesota"
+  },
+  {
+    "teamId": 1610612740,
+    "abbreviation": "NOP",
+    "teamName": "New Orleans Pelicans",
+    "simpleName": "Pelicans",
+    "conference": "West",
+    "location": "New Orleans"
+  },
+  {
+    "teamId": 1610612752,
+    "abbreviation": "NYK",
+    "teamName": "New York Knicks",
+    "simpleName": "Knicks",
+    "conference": "East",
+    "location": "New York"
+  },
+  {
+    "teamId": 1610612760,
+    "abbreviation": "OKC",
+    "teamName": "Oklahoma City Thunder",
+    "simpleName": "Thunder",
+    "conference": "West",
+    "location": "Oklahoma City"
+  },
+  {
+    "teamId": 1610612753,
+    "abbreviation": "ORL",
+    "teamName": "Orlando Magic",
+    "simpleName": "Magic",
+    "conference": "East",
+    "location": "Orlando"
+  },
+  {
+    "teamId": 1610612755,
+    "abbreviation": "PHI",
+    "teamName": "Philadelphia 76ers",
+    "simpleName": "76ers",
+    "conference": "East",
+    "location": "Philadelphia"
+  },
+  {
+    "teamId": 1610612756,
+    "abbreviation": "PHX",
+    "teamName": "Phoenix Suns",
+    "simpleName": "Suns",
+    "conference": "West",
+    "location": "Phoenix"
+  },
+  {
+    "teamId": 1610612757,
+    "abbreviation": "POR",
+    "teamName": "Portland Trail Blazers",
+    "simpleName": "Trail Blazers",
+    "conference": "West",
+    "location": "Portland"
+  },
+  {
+    "teamId": 1610612758,
+    "abbreviation": "SAC",
+    "teamName": "Sacramento Kings",
+    "simpleName": "Kings",
+    "conference": "West",
+    "location": "Sacramento"
+  },
+  {
+    "teamId": 1610612759,
+    "abbreviation": "SAS",
+    "teamName": "San Antonio Spurs",
+    "simpleName": "Spurs",
+    "conference": "West",
+    "location": "San Antonio"
+  },
+  {
+    "teamId": 1610612761,
+    "abbreviation": "TOR",
+    "teamName": "Toronto Raptors",
+    "simpleName": "Raptors",
+    "conference": "East",
+    "location": "Toronto"
+  },
+  {
+    "teamId": 1610612762,
+    "abbreviation": "UTA",
+    "teamName": "Utah Jazz",
+    "simpleName": "Jazz",
+    "conference": "West",
+    "location": "Utah"
+  },
+  {
+    "teamId": 1610612764,
+    "abbreviation": "WAS",
+    "teamName": "Washington Wizards",
+    "simpleName": "Wizards",
+    "conference": "East",
+    "location": "Washington"
+  }
+]
 
 
   //${response.data.league['standard'][i]['firstName']}
@@ -50,6 +314,12 @@ export default function App() {
         let random = Math.random() * 585;
         random = Math.floor(random);
         setPlayer(response.data.league['standard'][random]);
+        for(var j=0; j<teamData.length; j++){
+          if(parseInt(response.data.league['standard'][random]['teamId']) === parseInt(teamData[j]['teamId'])){
+            setConference(teamData[j]['conference']);
+            console.log(teamData[j]['conference']);
+          }
+        }
         setPlayerPicture(response.data.league['standard'][random]['personId']);
         console.log(response.data.league['standard'][random]);
         setDatabase(response.data.league["standard"]);
@@ -69,10 +339,7 @@ export default function App() {
 
   const displayPlayer = (e) => {
     e.preventDefault();
-
-
   }
-
 
 
   return (
@@ -87,15 +354,24 @@ export default function App() {
             }}>
             <Select value={{label: `${value}`}} onChange={e => setValue(e.label)} options={names} components={{ DropdownIndicator:() => null, IndicatorSeparator:() => null }}/>
           <button className={'button'} onClick={()=>{
+
             setLetsGo(true);
             for(var i=0; i<database.length; i++){
+
               if((database[i]['firstName'] === value.split(' ')[0] && database[i]['lastName'] === value.split(' ')[1]) || ((database[i]['firstName'] === value.split(' ')[0] && database[i]['lastName'] === value.split(' ')[1] + ' ' + value.split(' ')[2]))){
+
                 switch(guesses){
                   case 1:
                   setPicture1(database[i]['personId']);
                   setPlayer1(database[i]);
                   setGuessed(database[i]['personId']);
                   setGuesses(guesses + 1);
+                  for(var j=0; j<teamData.length; j++){
+                    if(parseInt(database[i]['teamId']) === parseInt(teamData[j]['teamId'])){
+                      setTeam(teamData[j]['simpleName']);
+                      setConference1(teamData[j]['conference']);
+                    }
+                  }
                   break;
 
                   case 2:
@@ -103,6 +379,12 @@ export default function App() {
                   setPlayer2(database[i]);
                   setGuessed(guessed + database[i]['personId']);
                   setGuesses(guesses + 1);
+                  for(var j=0; j<teamData.length; j++){
+                    if(parseInt(database[i]['teamId']) === parseInt(teamData[j]['teamId'])){
+                      setTeam2(teamData[j]['simpleName']);
+                      setConference2(teamData[j]['conference']);
+                    }
+                  }
                   break;
 
                   case 3:
@@ -110,6 +392,12 @@ export default function App() {
                   setPlayer3(database[i]);
                   setGuessed(guessed + database[i]['personId']);
                   setGuesses(guesses + 1);
+                  for(var j=0; j<teamData.length; j++){
+                    if(parseInt(database[i]['teamId']) === parseInt(teamData[j]['teamId'])){
+                      setTeam3(teamData[j]['simpleName']);
+                      setConference3(teamData[j]['conference']);
+                    }
+                  }
                   break;
 
                   case 4:
@@ -117,6 +405,12 @@ export default function App() {
                   setPlayer4(database[i]);
                   setGuessed(guessed + database[i]['personId']);
                   setGuesses(guesses + 1);
+                  for(var j=0; j<teamData.length; j++){
+                    if(parseInt(database[i]['teamId']) === parseInt(teamData[j]['teamId'])){
+                      setTeam4(teamData[j]['simpleName']);
+                      setConference4(teamData[j]['conference']);
+                    }
+                  }
                   break;
 
                   case 5:
@@ -124,6 +418,12 @@ export default function App() {
                   setPlayer5(database[i]);
                   setGuessed(guessed + database[i]['personId']);
                   setGuesses(guesses + 1);
+                  for(var j=0; j<teamData.length; j++){
+                    if(parseInt(database[i]['teamId']) === parseInt(teamData[j]['teamId'])){
+                      setTeam5(teamData[j]['simpleName']);
+                      setConference5(teamData[j]['conference']);
+                    }
+                  }
                   break;
 
                   case 6:
@@ -131,6 +431,12 @@ export default function App() {
                   setPlayer6(database[i]);
                   setGuessed(guessed + database[i]['personId']);
                   setGuesses(guesses + 1);
+                  for(var j=0; j<teamData.length; j++){
+                    if(parseInt(database[i]['teamId']) === parseInt(teamData[j]['teamId'])){
+                      setTeam6(teamData[j]['simpleName']);
+                      setConference6(teamData[j]['conference']);
+                    }
+                  }
                   break;
 
                   case 7:
@@ -138,6 +444,12 @@ export default function App() {
                   setPlayer7(database[i]);
                   setGuessed(guessed + database[i]['personId']);
                   setGuesses(guesses + 1);
+                  for(var j=0; j<teamData.length; j++){
+                    if(parseInt(database[i]['teamId']) === parseInt(teamData[j]['teamId'])){
+                      setTeam7(teamData[j]['simpleName']);
+                      setConference7(teamData[j]['conference']);
+                    }
+                  }
                   break;
 
                   case 8:
@@ -145,6 +457,12 @@ export default function App() {
                   setPlayer8(database[i]);
                   setGuessed(guessed + database[i]['personId']);
                   setGuesses(guesses + 1);
+                  for(var j=0; j<teamData.length; j++){
+                    if(parseInt(database[i]['teamId']) === parseInt(teamData[j]['teamId'])){
+                      setTeam8(teamData[j]['simpleName']);
+                      setConference8(teamData[j]['conference']);
+                    }
+                  }
                   break;
 
                   default:
@@ -177,6 +495,8 @@ export default function App() {
           <div className={player1['heightInches'] == player['heightInches'] ? 'correct' : 'inner_card'}>{player1['heightFeet'] + "'" + player1['heightInches']}</div>
           <div className={player1['yearsPro'] == player['yearsPro'] ? 'correct' : 'inner_card'}>{"Years Pro: " + player1['yearsPro']}</div>
           <div className={player1['pos'] == player['pos'] ? 'correct' :'inner_card'}>{player1['pos']}</div>
+          <div className={player1['teamId'] == player['teamId'] ? 'correct' : 'inner_card'}>{team}</div>
+          <div className={conference1 == conference ? 'correct' : 'inner_card'}>{conference1}</div>
         </div>
       </Card.Body>
       </Card>
@@ -198,6 +518,8 @@ export default function App() {
       <div className={player2['heightInches'] == player['heightInches'] ? 'correct' : 'inner_card'}>{player2['heightFeet'] + "'" + player2['heightInches']}</div>
       <div className={player2['yearsPro'] == player['yearsPro'] ? 'correct' : 'inner_card'}>{"Years Pro: " + player2['yearsPro']}</div>
       <div className={player2['pos'] == player['pos'] ? 'correct' :'inner_card'}>{player2['pos']}</div>
+      <div className={player2['teamId'] == player['teamId'] ? 'correct' : 'inner_card'}>{team2}</div>
+      <div className={conference2 == conference ? 'correct' : 'inner_card'}>{conference2}</div>
       </div>
     </Card.Body>
     </Card>
@@ -217,6 +539,8 @@ export default function App() {
       <div className={player3['heightInches'] == player['heightInches'] ? 'correct' : 'inner_card'}>{player3['heightFeet'] + "'" + player3['heightInches']}</div>
       <div className={player3['yearsPro'] == player['yearsPro'] ? 'correct' : 'inner_card'}>{"Years Pro: " + player3['yearsPro']}</div>
       <div className={player3['pos'] == player['pos'] ? 'correct' :'inner_card'}>{player3['pos']}</div>
+      <div className={player3['teamId'] == player['teamId'] ? 'correct' : 'inner_card'}>{team3}</div>
+      <div className={conference3 == conference ? 'correct' : 'inner_card'}>{conference3}</div>
       </div>
     </Card.Body>
     </Card>
@@ -236,6 +560,8 @@ export default function App() {
       <div className={player4['heightInches'] == player['heightInches'] ? 'correct' : 'inner_card'}>{player4['heightFeet'] + "'" + player4['heightInches']}</div>
       <div className={player4['yearsPro'] == player['yearsPro'] ? 'correct' : 'inner_card'}>{"Years Pro: " + player4['yearsPro']}</div>
       <div className={player4['pos'] == player['pos'] ? 'correct' :'inner_card'}>{player4['pos']}</div>
+      <div className={player4['teamId'] == player['teamId'] ? 'correct' : 'inner_card'}>{team4}</div>
+      <div className={conference4 == conference ? 'correct' : 'inner_card'}>{conference4}</div>
       </div>
     </Card.Body>
     </Card>
@@ -255,6 +581,8 @@ export default function App() {
       <div className={player5['heightInches'] == player['heightInches'] ? 'correct' : 'inner_card'}>{player5['heightFeet'] + "'" + player5['heightInches']}</div>
       <div className={player5['yearsPro'] == player['yearsPro'] ? 'correct' : 'inner_card'}>{"Years Pro: " + player5['yearsPro']}</div>
       <div className={player5['pos'] == player['pos'] ? 'correct' :'inner_card'}>{player5['pos']}</div>
+      <div className={player5['teamId'] == player['teamId'] ? 'correct' : 'inner_card'}>{team5}</div>
+      <div className={conference5 == conference ? 'correct' : 'inner_card'}>{conference5}</div>
       </div>
     </Card.Body>
     </Card>
@@ -274,6 +602,8 @@ export default function App() {
       <div className={player6['heightInches'] == player['heightInches'] ? 'correct' : 'inner_card'}>{player6['heightFeet'] + "'" + player6['heightInches']}</div>
       <div className={player6['yearsPro'] == player['yearsPro'] ? 'correct' : 'inner_card'}>{"Years Pro: " + player6['yearsPro']}</div>
       <div className={player6['pos'] == player['pos'] ? 'correct' :'inner_card'}>{player6['pos']}</div>
+      <div className={player6['teamId'] == player['teamId'] ? 'correct' : 'inner_card'}>{team6}</div>
+      <div className={conference6 == conference ? 'correct' : 'inner_card'}>{conference6}</div>
       </div>
     </Card.Body>
     </Card>
@@ -293,6 +623,8 @@ export default function App() {
       <div className={player7['heightInches'] == player['heightInches'] ? 'correct' : 'inner_card'}>{player7['heightFeet'] + "'" + player7['heightInches']}</div>
       <div className={player7['yearsPro'] == player['yearsPro'] ? 'correct' : 'inner_card'}>{"Years Pro: " + player7['yearsPro']}</div>
       <div className={player7['pos'] == player['pos'] ? 'correct' :'inner_card'}>{player7['pos']}</div>
+      <div className={player7['teamId'] == player['teamId'] ? 'correct' : 'inner_card'}>{team7}</div>
+      <div className={conference7 == conference ? 'correct' : 'inner_card'}>{conference7}</div>
       </div>
     </Card.Body>
     </Card>
@@ -313,6 +645,8 @@ export default function App() {
       <div className={player8['heightInches'] == player['heightInches'] ? 'correct' : 'inner_card'}>{player8['heightFeet'] + "'" + player8['heightInches']}</div>
       <div className={player8['yearsPro'] == player['yearsPro'] ? 'correct' : 'inner_card'}>{"Years Pro: " + player8['yearsPro']}</div>
       <div className={player8['pos'] == player['pos'] ? 'correct' :'inner_card'}>{player8['pos']}</div>
+      <div className={player8['teamId'] == player['teamId'] ? 'correct' : 'inner_card'}>{team8}</div>
+      <div className={conference8 == conference ? 'correct' : 'inner_card'}>{conference8}</div>
       </div>
     </Card.Body>
     </Card>
