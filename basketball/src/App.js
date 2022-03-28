@@ -80,7 +80,7 @@ export default function App() {
     <div className={'container'}>
     <div className={'header_container'}>
       <div className={'left-half'}>
-        <h1 className={'header_text'}>Wardell</h1>
+        <h1 className={correct ? 'correct_header_text' : 'header_text'}>{!correct ? 'Wardell' : 'Correct! Click picture to reset.'}</h1>
             <form className={'form'} onSubmit={(e) => {
               e.preventDefault();
               setValue("");
@@ -159,7 +159,7 @@ export default function App() {
           </form>
           </div>
           <div className={'right_half'}>
-            <img className={correct ? 'correct_picture' : 'blank_picture'} src={`https://cdn.nba.com/headshots/nba/latest/1040x760/${playerPicture}.png`}/>
+            <img onClick={() => window.location.reload(false)} className={correct ? 'correct_picture' : 'blank_picture'} src={`https://cdn.nba.com/headshots/nba/latest/1040x760/${playerPicture}.png`}/>
           </div>
           </div>
     </div>

@@ -42,6 +42,10 @@ a{
   text-align: center;
 }
 
+.correct_header_text{
+  font-size: 1.5vh;
+}
+
 .button{
   border: none;
   border-radius: 10px;
