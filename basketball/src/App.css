@@ -1,6 +1,7 @@
 .container{
   background: #17408B;
   align-items: center;
+  text-align: center;
   color: white;
   padding: 10px;
   font-size: 15px;
@@ -11,10 +12,8 @@
 }
 
 .header_container{
-  margin: auto;
-  max-width: 25vw;
   display: inline-flex;
-  align-items: center;
+  margin: 0 auto;
 }
 
 body{
@@ -37,7 +36,6 @@ a{
   min-width: 20vh;
   max-height: 10vh;
   float: left;
-  margin: auto;
 }
 
 .header_text{
