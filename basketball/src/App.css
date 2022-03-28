@@ -119,6 +119,11 @@ a{
   filter: brightness(0);
 }
 
+.correct_picture{
+  width: 24vh;
+  height: 20vh;
+}
+
 .left_half{
   float: left;
   display: inline;

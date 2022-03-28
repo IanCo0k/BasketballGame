@@ -39,6 +39,8 @@ export default function App() {
   const [player, setPlayer] = useState({});
   const [playerPicture, setPlayerPicture] = useState('');
 
+  const [correct, setCorrect] = useState(false);
+
 
   //${response.data.league['standard'][i]['firstName']}
 
@@ -87,7 +89,7 @@ export default function App() {
           <button className={'button'} onClick={()=>{
             setLetsGo(true);
             for(var i=0; i<database.length; i++){
-              if(database[i]['firstName'] === value.split(' ')[0] && database[i]['lastName'] === value.split(' ')[1]){
+              if((database[i]['firstName'] === value.split(' ')[0] && database[i]['lastName'] === value.split(' ')[1]) || ((database[i]['firstName'] === value.split(' ')[0] && database[i]['lastName'] === value.split(' ')[1] + ' ' + value.split(' ')[2]))){
                 switch(guesses){
                   case 1:
                   setPicture1(database[i]['personId']);
@@ -147,6 +149,9 @@ export default function App() {
 
                   default:
                 }
+                if((database[i]['firstName'] == player['firstName']) && (database[i]['lastName'] == player['lastName'])){
+                  setCorrect(true);
+                }
               }
             }
             setValue('');
@@ -154,7 +159,7 @@ export default function App() {
           </form>
           </div>
           <div className={'right_half'}>
-            <img className={'blank_picture'} src={`https://cdn.nba.com/headshots/nba/latest/1040x760/${playerPicture}.png`}/>
+            <img className={correct ? 'correct_picture' : 'blank_picture'} src={`https://cdn.nba.com/headshots/nba/latest/1040x760/${playerPicture}.png`}/>
           </div>
           </div>
     </div>
