@@ -504,7 +504,7 @@ export default function App() {
       <Card.Body>
         <div className={'inner_container'}>
           <div className={(player1['collegeName'] == player['collegeName']) ? 'correct' : 'inner_card'}>{player1['collegeName']}</div>
-          <div className={player1['heightInches'] == player['heightInches'] && player1['heightFeet'] == player['heightFeet'] ? 'correct' : Math.abs(parseInt(player['heightInches']) - parseInt(player1['heightInches'])) ? 'almost' : 'inner_card'}>{player1['heightFeet'] + "'" + player1['heightInches']}</div>
+          <div className={player1['heightInches'] == player['heightInches'] && player1['heightFeet'] == player['heightFeet'] ? 'correct' : Math.abs(parseInt(player['heightInches']) - parseInt(player1['heightInches'])) && player1['heightFeet'] == player['heightFeet'] ? 'almost' : 'inner_card'}>{player1['heightFeet'] + "'" + player1['heightInches']}</div>
           <div className={player1['yearsPro'] == player['yearsPro'] ? 'correct' : 'inner_card'}>{"Years Pro: " + player1['yearsPro']}</div>
           <div className={player1['pos'] == player['pos'] ? 'correct' :'inner_card'}>{player1['pos']}</div>
           <div className={player1['teamId'] == player['teamId'] ? 'correct' : 'inner_card'}>{team}</div>
@@ -527,7 +527,7 @@ export default function App() {
     <Card.Body>
       <div className={'inner_container'}>
       <div className={(player2['collegeName'] == player['collegeName']) ? 'correct' : 'inner_card'}>{player2['collegeName']}</div>
-      <div className={player2['heightInches'] == player['heightInches'] && player2['heightFeet'] == player['heightFeet'] ? 'correct' : Math.abs(parseInt(player['heightInches']) - parseInt(player2['heightInches'])) ? 'almost' : 'inner_card'}>{player2['heightFeet'] + "'" + player2['heightInches']}</div>
+      <div className={player2['heightInches'] == player['heightInches'] && player2['heightFeet'] == player['heightFeet'] ? 'correct' : Math.abs(parseInt(player['heightInches']) - parseInt(player2['heightInches'])) && player2['heightFeet'] == player['heightFeet']  ? 'almost' : 'inner_card'}>{player2['heightFeet'] + "'" + player2['heightInches']}</div>
       <div className={player2['yearsPro'] == player['yearsPro'] ? 'correct' : 'inner_card'}>{"Years Pro: " + player2['yearsPro']}</div>
       <div className={player2['pos'] == player['pos'] ? 'correct' :'inner_card'}>{player2['pos']}</div>
       <div className={player2['teamId'] == player['teamId'] ? 'correct' : 'inner_card'}>{team2}</div>
@@ -548,7 +548,7 @@ export default function App() {
     <Card.Body>
       <div className={'inner_container'}>
       <div className={(player3['collegeName'] == player['collegeName']) ? 'correct' : 'inner_card'}>{player3['collegeName']}</div>
-      <div className={player3['heightInches'] == player['heightInches'] && player3['heightFeet'] == player['heightFeet'] ? 'correct' : Math.abs(parseInt(player['heightInches']) - parseInt(player3['heightInches'])) ? 'almost' : 'inner_card'}>{player3['heightFeet'] + "'" + player3['heightInches']}</div>
+      <div className={player3['heightInches'] == player['heightInches'] && player3['heightFeet'] == player['heightFeet'] ? 'correct' : Math.abs(parseInt(player['heightInches']) - parseInt(player3['heightInches'])) && player3['heightFeet'] == player['heightFeet']  ? 'almost' : 'inner_card'}>{player3['heightFeet'] + "'" + player3['heightInches']}</div>
       <div className={player3['yearsPro'] == player['yearsPro'] ? 'correct' : 'inner_card'}>{"Years Pro: " + player3['yearsPro']}</div>
       <div className={player3['pos'] == player['pos'] ? 'correct' :'inner_card'}>{player3['pos']}</div>
       <div className={player3['teamId'] == player['teamId'] ? 'correct' : 'inner_card'}>{team3}</div>
@@ -569,7 +569,7 @@ export default function App() {
     <Card.Body>
       <div className={'inner_container'}>
       <div className={(player4['collegeName'] == player['collegeName']) ? 'correct' : 'inner_card'}>{player4['collegeName']}</div>
-      <div className={player4['heightInches'] == player['heightInches'] && player4['heightFeet'] == player['heightFeet'] ? 'correct' : Math.abs(parseInt(player['heightInches']) - parseInt(player4['heightInches'])) ? 'almost' : 'inner_card'}>{player4['heightFeet'] + "'" + player4['heightInches']}</div>
+      <div className={player4['heightInches'] == player['heightInches'] && player4['heightFeet'] == player['heightFeet'] ? 'correct' : Math.abs(parseInt(player['heightInches']) - parseInt(player4['heightInches'])) && player4['heightFeet'] == player['heightFeet']  ? 'almost' : 'inner_card'}>{player4['heightFeet'] + "'" + player4['heightInches']}</div>
       <div className={player4['yearsPro'] == player['yearsPro'] ? 'correct' : 'inner_card'}>{"Years Pro: " + player4['yearsPro']}</div>
       <div className={player4['pos'] == player['pos'] ? 'correct' :'inner_card'}>{player4['pos']}</div>
       <div className={player4['teamId'] == player['teamId'] ? 'correct' : 'inner_card'}>{team4}</div>
@@ -590,7 +590,7 @@ export default function App() {
     <Card.Body>
       <div className={'inner_container'}>
       <div className={(player5['collegeName'] == player['collegeName']) ? 'correct' : 'inner_card'}>{player5['collegeName']}</div>
-      <div className={player5['heightInches'] == player['heightInches'] && player5['heightFeet'] == player['heightFeet'] ? 'correct' : Math.abs(parseInt(player['heightInches']) - parseInt(player5['heightInches'])) ? 'almost' : 'inner_card'}>{player5['heightFeet'] + "'" + player5['heightInches']}</div>
+      <div className={player5['heightInches'] == player['heightInches'] && player5['heightFeet'] == player['heightFeet'] ? 'correct' : Math.abs(parseInt(player['heightInches']) - parseInt(player5['heightInches'])) && player5['heightFeet'] == player['heightFeet']  ? 'almost' : 'inner_card'}>{player5['heightFeet'] + "'" + player5['heightInches']}</div>
       <div className={player5['yearsPro'] == player['yearsPro'] ? 'correct' : 'inner_card'}>{"Years Pro: " + player5['yearsPro']}</div>
       <div className={player5['pos'] == player['pos'] ? 'correct' :'inner_card'}>{player5['pos']}</div>
       <div className={player5['teamId'] == player['teamId'] ? 'correct' : 'inner_card'}>{team5}</div>
@@ -611,7 +611,7 @@ export default function App() {
     <Card.Body>
       <div className={'inner_container'}>
       <div className={(player6['collegeName'] == player['collegeName']) ? 'correct' : 'inner_card'}>{player6['collegeName']}</div>
-      <div className={player6['heightInches'] == player['heightInches'] && player6['heightFeet'] == player['heightFeet'] ? 'correct' : Math.abs(parseInt(player['heightInches']) - parseInt(player6['heightInches'])) ? 'almost' : 'inner_card'}>{player6['heightFeet'] + "'" + player6['heightInches']}</div>
+      <div className={player6['heightInches'] == player['heightInches'] && player6['heightFeet'] == player['heightFeet'] ? 'correct' : Math.abs(parseInt(player['heightInches']) - parseInt(player6['heightInches'])) && player6['heightFeet'] == player['heightFeet']  ? 'almost' : 'inner_card'}>{player6['heightFeet'] + "'" + player6['heightInches']}</div>
       <div className={player6['yearsPro'] == player['yearsPro'] ? 'correct' : 'inner_card'}>{"Years Pro: " + player6['yearsPro']}</div>
       <div className={player6['pos'] == player['pos'] ? 'correct' :'inner_card'}>{player6['pos']}</div>
       <div className={player6['teamId'] == player['teamId'] ? 'correct' : 'inner_card'}>{team6}</div>
@@ -632,7 +632,7 @@ export default function App() {
     <Card.Body>
       <div className={'inner_container'}>
       <div className={(player7['collegeName'] == player['collegeName']) ? 'correct' : 'inner_card'}>{player7['collegeName']}</div>
-      <div className={player7['heightInches'] == player['heightInches'] && player7['heightFeet'] == player['heightFeet'] ? 'correct' : Math.abs(parseInt(player['heightInches']) - parseInt(player7['heightInches'])) ? 'almost' : 'inner_card'}>{player7['heightFeet'] + "'" + player7['heightInches']}</div>
+      <div className={player7['heightInches'] == player['heightInches'] && player7['heightFeet'] == player['heightFeet'] ? 'correct' : Math.abs(parseInt(player['heightInches']) - parseInt(player7['heightInches'])) && player7['heightFeet'] == player['heightFeet']  ? 'almost' : 'inner_card'}>{player7['heightFeet'] + "'" + player7['heightInches']}</div>
       <div className={player7['yearsPro'] == player['yearsPro'] ? 'correct' : 'inner_card'}>{"Years Pro: " + player7['yearsPro']}</div>
       <div className={player7['pos'] == player['pos'] ? 'correct' :'inner_card'}>{player7['pos']}</div>
       <div className={player7['teamId'] == player['teamId'] ? 'correct' : 'inner_card'}>{team7}</div>
@@ -654,7 +654,7 @@ export default function App() {
     <Card.Body>
       <div className={'inner_container'}>
       <div className={(player8['collegeName'] == player['collegeName']) ? 'correct' : 'inner_card'}>{player8['collegeName']}</div>
-      <div className={player8['heightInches'] == player['heightInches'] && player8['heightFeet'] == player['heightFeet'] ? 'correct' : Math.abs(parseInt(player['heightInches']) - parseInt(player8['heightInches'])) ? 'almost' : 'inner_card'}>{player8['heightFeet'] + "'" + player8['heightInches']}</div>
+      <div className={player8['heightInches'] == player['heightInches'] && player8['heightFeet'] == player['heightFeet'] ? 'correct' : Math.abs(parseInt(player['heightInches']) - parseInt(player8['heightInches'])) && player8['heightFeet'] == player['heightFeet']  ? 'almost' : 'inner_card'}>{player8['heightFeet'] + "'" + player8['heightInches']}</div>
       <div className={player8['yearsPro'] == player['yearsPro'] ? 'correct' : 'inner_card'}>{"Years Pro: " + player8['yearsPro']}</div>
       <div className={player8['pos'] == player['pos'] ? 'correct' :'inner_card'}>{player8['pos']}</div>
       <div className={player8['teamId'] == player['teamId'] ? 'correct' : 'inner_card'}>{team8}</div>
