@@ -126,6 +126,7 @@ a{
   width: 24vh;
   height: 20vh;
   filter: brightness(0);
+  display: none;
 }
 
 .correct_picture{
