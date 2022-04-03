@@ -60,7 +60,7 @@ export default function App() {
   const [conference8, setConference8] = useState();
 
   const [correct, setCorrect] = useState(false);
-
+  const [allGuesses, setAllGuesses] = useState(false);
 
   let teamData = [
   {
@@ -359,7 +359,7 @@ export default function App() {
     <div className={'container'}>
     <div className={'header_container'}>
       <div className={'left-half'}>
-        <h1 className={correct ? 'correct_header_text' : 'header_text'}>{!correct ? 'Wardell' : 'Correct! Click picture to reset.'}</h1>
+        <h1 className={correct ? 'correct_header_text' : 'header_text'}>{allGuesses && correct ? 'Wrong. Click picture to reset': !correct ? 'Wardell' : 'Correct! Click picture to reset.'}</h1>
             <form className={'form'} onSubmit={(e) => {
               e.preventDefault();
               setValue("");
@@ -377,7 +377,6 @@ export default function App() {
                   setPicture1(database[i]['personId']);
                   setPlayer1(database[i]);
                   setGuessed(database[i]['personId']);
-                  setGuesses(guesses + 1);
                   for(var j=0; j<teamData.length; j++){
                     if(parseInt(database[i]['teamId']) === parseInt(teamData[j]['teamId'])){
                       setTeam(teamData[j]['simpleName']);
@@ -390,7 +389,6 @@ export default function App() {
                   setPicture2(database[i]['personId']);
                   setPlayer2(database[i]);
                   setGuessed(guessed + database[i]['personId']);
-                  setGuesses(guesses + 1);
                   for(var j=0; j<teamData.length; j++){
                     if(parseInt(database[i]['teamId']) === parseInt(teamData[j]['teamId'])){
                       setTeam2(teamData[j]['simpleName']);
@@ -403,7 +401,6 @@ export default function App() {
                   setPicture3(database[i]['personId']);
                   setPlayer3(database[i]);
                   setGuessed(guessed + database[i]['personId']);
-                  setGuesses(guesses + 1);
                   for(var j=0; j<teamData.length; j++){
                     if(parseInt(database[i]['teamId']) === parseInt(teamData[j]['teamId'])){
                       setTeam3(teamData[j]['simpleName']);
@@ -416,7 +413,6 @@ export default function App() {
                   setPicture4(database[i]['personId']);
                   setPlayer4(database[i]);
                   setGuessed(guessed + database[i]['personId']);
-                  setGuesses(guesses + 1);
                   for(var j=0; j<teamData.length; j++){
                     if(parseInt(database[i]['teamId']) === parseInt(teamData[j]['teamId'])){
                       setTeam4(teamData[j]['simpleName']);
@@ -429,7 +425,6 @@ export default function App() {
                   setPicture5(database[i]['personId']);
                   setPlayer5(database[i]);
                   setGuessed(guessed + database[i]['personId']);
-                  setGuesses(guesses + 1);
                   for(var j=0; j<teamData.length; j++){
                     if(parseInt(database[i]['teamId']) === parseInt(teamData[j]['teamId'])){
                       setTeam5(teamData[j]['simpleName']);
@@ -442,7 +437,6 @@ export default function App() {
                   setPicture6(database[i]['personId']);
                   setPlayer6(database[i]);
                   setGuessed(guessed + database[i]['personId']);
-                  setGuesses(guesses + 1);
                   for(var j=0; j<teamData.length; j++){
                     if(parseInt(database[i]['teamId']) === parseInt(teamData[j]['teamId'])){
                       setTeam6(teamData[j]['simpleName']);
@@ -455,7 +449,6 @@ export default function App() {
                   setPicture7(database[i]['personId']);
                   setPlayer7(database[i]);
                   setGuessed(guessed + database[i]['personId']);
-                  setGuesses(guesses + 1);
                   for(var j=0; j<teamData.length; j++){
                     if(parseInt(database[i]['teamId']) === parseInt(teamData[j]['teamId'])){
                       setTeam7(teamData[j]['simpleName']);
@@ -468,7 +461,6 @@ export default function App() {
                   setPicture8(database[i]['personId']);
                   setPlayer8(database[i]);
                   setGuessed(guessed + database[i]['personId']);
-                  setGuesses(guesses + 1);
                   for(var j=0; j<teamData.length; j++){
                     if(parseInt(database[i]['teamId']) === parseInt(teamData[j]['teamId'])){
                       setTeam8(teamData[j]['simpleName']);
@@ -484,7 +476,13 @@ export default function App() {
                 }
               }
             }
+            setGuesses(guesses + 1);
+            if(guesses >= 8 && !correct){
+              setAllGuesses(true);
+              setCorrect(true);
+            }
             setValue('');
+            console.log(guesses);
           }}>Guess</button>
           </form>
           </div>
