@@ -644,25 +644,23 @@ export default function App() {
     <Card className={'card'}><Card.Title>7</Card.Title></Card>
   }
 
-  {guesses > 8 ?
-    <div style>
+  {guesses >8 ?
     <Card className={'card'}>
     <Card.Title>
       {player8["firstName"] + " " + player8['lastName']}
     </Card.Title>
-    <Card.Img className={'pictures'} variant="top" src={`https://cdn.nba.com/headshots/nba/latest/1040x760/${picture8}.png`}/>
+    <Card.Img className={'pictures'} variant="top" src={`https://cdn.nba.com/headshots/nba/latest/1040x760/${picture7}.png`}/>
     <Card.Body>
       <div className={'inner_container'}>
       <div className={(player8['collegeName'] == player['collegeName']) ? 'correct' : 'inner_card'}>{player8['collegeName']}</div>
       <div className={player8['heightInches'] == player['heightInches'] && player8['heightFeet'] == player['heightFeet'] ? 'correct' : Math.abs(parseInt(player['heightInches']) - parseInt(player8['heightInches']))<=2 && player8['heightFeet'] == player['heightFeet']  ? 'almost' : 'inner_card'}>{player8['heightFeet'] + "'" + player8['heightInches']}</div>
       <div className={player8['yearsPro'] == player['yearsPro'] ? 'correct' : 'inner_card'}>{"Years Pro: " + player8['yearsPro']}</div>
-      <div className={player8['pos'] == player['pos'] ? 'correct' :'inner_card'}>{player8['pos']}</div>
+      <div className={player8['pos'] == player['pos'] ? 'correct' :'inner_card'}>{player7['pos']}</div>
       <div className={player8['teamId'] == player['teamId'] ? 'correct' : 'inner_card'}>{team8}</div>
       <div className={conference8 == conference ? 'correct' : 'inner_card'}>{conference8}</div>
       </div>
     </Card.Body>
     </Card>
-    </div>
     :
     <Card className={'card'}><Card.Title>8</Card.Title></Card>
   }
