@@ -367,8 +367,11 @@ export default function App() {
             }}>
             <Select value={{label: `${value}`}} onChange={e => setValue(e.label)} options={names} components={{ DropdownIndicator:() => null, IndicatorSeparator:() => null }}/>
           <button className={'button'} onClick={()=>{
-
             setLetsGo(true);
+
+            if(value == ''){
+              console.log('we must break the loop')
+            } else{
             for(var i=0; i<database.length; i++){
 
               if((database[i]['firstName'] === value.split(' ')[0] && database[i]['lastName'] === value.split(' ')[1]) || ((database[i]['firstName'] === value.split(' ')[0] && database[i]['lastName'] === value.split(' ')[1] + ' ' + value.split(' ')[2]))){
@@ -484,6 +487,7 @@ export default function App() {
             }
             setValue('');
             console.log(guesses);
+          }
           }}>Guess</button>
           </form>
           </div>
