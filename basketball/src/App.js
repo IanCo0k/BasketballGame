@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Card } from 'react-bootstrap';
+import PlayerCard from './PlayerCard.js';
 import Select from 'react-select';
 import styles from './App.css'
 
@@ -494,22 +495,13 @@ export default function App() {
 
     <div className={'card_container'}>
     {guesses >= 1 && letsGo ?
-      <Card className={'card'}>
-      <Card.Title>
-        {player1["firstName"] + " " + player1['lastName']}
-      </Card.Title>
-      <Card.Img className={'pictures'} variant="top" src={`https://cdn.nba.com/headshots/nba/latest/1040x760/${picture1}.png`}/>
-      <Card.Body>
-        <div className={'inner_container'}>
-          <div className={(player1['collegeName'] == player['collegeName']) ? 'correct' : 'inner_card'}>{player1['collegeName']}</div>
-          <div className={player1['heightInches'] == player['heightInches'] && player1['heightFeet'] == player['heightFeet'] ? 'correct' : (Math.abs(parseInt(player['heightInches']) - parseInt(player1['heightInches'])) <= 2) && player1['heightFeet'] == player['heightFeet'] ? 'almost' : 'inner_card'}>{player1['heightFeet'] + "'" + player1['heightInches']}</div>
-          <div className={player1['yearsPro'] == player['yearsPro'] ? 'correct' : 'inner_card'}>{"Years Pro: " + player1['yearsPro']}</div>
-          <div className={player1['pos'] == player['pos'] ? 'correct' :'inner_card'}>{player1['pos']}</div>
-          <div className={player1['teamId'] == player['teamId'] ? 'correct' : 'inner_card'}>{team}</div>
-          <div className={conference1 == conference ? 'correct' : 'inner_card'}>{conference1}</div>
-        </div>
-      </Card.Body>
-      </Card>
+      <PlayerCard guess={player1}
+        player={player}
+        team={team}
+        picture={picture1}
+        conference={conference}
+        conference_guess={conference1}
+      />
 
       :
 
@@ -517,148 +509,85 @@ export default function App() {
     }
 
     {guesses > 2 ?
-    <Card className={'card'}>
-    <Card.Title>
-      {player2["firstName"] + " " + player2['lastName']}
-    </Card.Title>
-    <Card.Img className={'pictures'} variant="top" src={`https://cdn.nba.com/headshots/nba/latest/1040x760/${picture2}.png`}/>
-    <Card.Body>
-      <div className={'inner_container'}>
-      <div className={(player2['collegeName'] == player['collegeName']) ? 'correct' : 'inner_card'}>{player2['collegeName']}</div>
-      <div className={player2['heightInches'] == player['heightInches'] && player2['heightFeet'] == player['heightFeet'] ? 'correct' : Math.abs(parseInt(player['heightInches']) - parseInt(player2['heightInches']))<=2 && player2['heightFeet'] == player['heightFeet']  ? 'almost' : 'inner_card'}>{player2['heightFeet'] + "'" + player2['heightInches']}</div>
-      <div className={player2['yearsPro'] == player['yearsPro'] ? 'correct' : 'inner_card'}>{"Years Pro: " + player2['yearsPro']}</div>
-      <div className={player2['pos'] == player['pos'] ? 'correct' :'inner_card'}>{player2['pos']}</div>
-      <div className={player2['teamId'] == player['teamId'] ? 'correct' : 'inner_card'}>{team2}</div>
-      <div className={conference2 == conference ? 'correct' : 'inner_card'}>{conference2}</div>
-      </div>
-    </Card.Body>
-    </Card>
+      <PlayerCard guess={player2}
+        player={player}
+        team={team2}
+        picture={picture2}
+        conference={conference}
+        conference_guess={conference2}
+      />
     :
     <Card className={'card'}><Card.Title>2</Card.Title></Card>
   }
 
   {guesses > 3 ?
-    <Card className={'card'}>
-    <Card.Title>
-      {player3["firstName"] + " " + player3['lastName']}
-    </Card.Title>
-    <Card.Img className={'pictures'} variant="top" src={`https://cdn.nba.com/headshots/nba/latest/1040x760/${picture3}.png`}/>
-    <Card.Body>
-      <div className={'inner_container'}>
-      <div className={(player3['collegeName'] == player['collegeName']) ? 'correct' : 'inner_card'}>{player3['collegeName']}</div>
-      <div className={player3['heightInches'] == player['heightInches'] && player3['heightFeet'] == player['heightFeet'] ? 'correct' : Math.abs(parseInt(player['heightInches']) - parseInt(player3['heightInches']))<=2 && player3['heightFeet'] == player['heightFeet']  ? 'almost' : 'inner_card'}>{player3['heightFeet'] + "'" + player3['heightInches']}</div>
-      <div className={player3['yearsPro'] == player['yearsPro'] ? 'correct' : 'inner_card'}>{"Years Pro: " + player3['yearsPro']}</div>
-      <div className={player3['pos'] == player['pos'] ? 'correct' :'inner_card'}>{player3['pos']}</div>
-      <div className={player3['teamId'] == player['teamId'] ? 'correct' : 'inner_card'}>{team3}</div>
-      <div className={conference3 == conference ? 'correct' : 'inner_card'}>{conference3}</div>
-      </div>
-    </Card.Body>
-    </Card>
+    <PlayerCard guess={player3}
+      player={player}
+      team={team3}
+      picture={picture3}
+      conference={conference}
+      conference_guess={conference3}
+    />
     :
     <Card className={'card'}><Card.Title>3</Card.Title></Card>
   }
 
   {guesses > 4 ?
-    <Card className={'card'}>
-    <Card.Title>
-      {player4["firstName"] + " " + player4['lastName']}
-    </Card.Title>
-    <Card.Img className={'pictures'} variant="top" src={`https://cdn.nba.com/headshots/nba/latest/1040x760/${picture4}.png`}/>
-    <Card.Body>
-      <div className={'inner_container'}>
-      <div className={(player4['collegeName'] == player['collegeName']) ? 'correct' : 'inner_card'}>{player4['collegeName']}</div>
-      <div className={player4['heightInches'] == player['heightInches'] && player4['heightFeet'] == player['heightFeet'] ? 'correct' : Math.abs(parseInt(player['heightInches']) - parseInt(player4['heightInches']))<=2 && player4['heightFeet'] == player['heightFeet']  ? 'almost' : 'inner_card'}>{player4['heightFeet'] + "'" + player4['heightInches']}</div>
-      <div className={player4['yearsPro'] == player['yearsPro'] ? 'correct' : 'inner_card'}>{"Years Pro: " + player4['yearsPro']}</div>
-      <div className={player4['pos'] == player['pos'] ? 'correct' :'inner_card'}>{player4['pos']}</div>
-      <div className={player4['teamId'] == player['teamId'] ? 'correct' : 'inner_card'}>{team4}</div>
-      <div className={conference4 == conference ? 'correct' : 'inner_card'}>{conference4}</div>
-      </div>
-    </Card.Body>
-    </Card>
+    <PlayerCard guess={player4}
+      player={player}
+      team={team4}
+      picture={picture4}
+      conference={conference}
+      conference_guess={conference4}
+    />
     :
     <Card className={'card'}><Card.Title>4</Card.Title></Card>
   }
 
   {guesses>5 ?
-    <Card className={'card'}>
-    <Card.Title>
-      {player5["firstName"] + " " + player5['lastName']}
-    </Card.Title>
-    <Card.Img className={'pictures'} variant="top" src={`https://cdn.nba.com/headshots/nba/latest/1040x760/${picture5}.png`}/>
-    <Card.Body>
-      <div className={'inner_container'}>
-      <div className={(player5['collegeName'] == player['collegeName']) ? 'correct' : 'inner_card'}>{player5['collegeName']}</div>
-      <div className={player5['heightInches'] == player['heightInches'] && player5['heightFeet'] == player['heightFeet'] ? 'correct' : Math.abs(parseInt(player['heightInches']) - parseInt(player5['heightInches']))<=2 && player5['heightFeet'] == player['heightFeet']  ? 'almost' : 'inner_card'}>{player5['heightFeet'] + "'" + player5['heightInches']}</div>
-      <div className={player5['yearsPro'] == player['yearsPro'] ? 'correct' : 'inner_card'}>{"Years Pro: " + player5['yearsPro']}</div>
-      <div className={player5['pos'] == player['pos'] ? 'correct' :'inner_card'}>{player5['pos']}</div>
-      <div className={player5['teamId'] == player['teamId'] ? 'correct' : 'inner_card'}>{team5}</div>
-      <div className={conference5 == conference ? 'correct' : 'inner_card'}>{conference5}</div>
-      </div>
-    </Card.Body>
-    </Card>
+    <PlayerCard guess={player5}
+      player={player}
+      team={team5}
+      picture={picture5}
+      conference={conference}
+      conference_guess={conference5}
+    />
     :
     <Card className={'card'}><Card.Title>5</Card.Title></Card>
   }
 
   {guesses > 6 ?
-    <Card className={'card'}>
-    <Card.Title>
-      {player6["firstName"] + " " + player6['lastName']}
-    </Card.Title>
-    <Card.Img className={'pictures'} variant="top" src={`https://cdn.nba.com/headshots/nba/latest/1040x760/${picture6}.png`}/>
-    <Card.Body>
-      <div className={'inner_container'}>
-      <div className={(player6['collegeName'] == player['collegeName']) ? 'correct' : 'inner_card'}>{player6['collegeName']}</div>
-      <div className={player6['heightInches'] == player['heightInches'] && player6['heightFeet'] == player['heightFeet'] ? 'correct' : Math.abs(parseInt(player['heightInches']) - parseInt(player6['heightInches']))<=2 && player6['heightFeet'] == player['heightFeet']  ? 'almost' : 'inner_card'}>{player6['heightFeet'] + "'" + player6['heightInches']}</div>
-      <div className={player6['yearsPro'] == player['yearsPro'] ? 'correct' : 'inner_card'}>{"Years Pro: " + player6['yearsPro']}</div>
-      <div className={player6['pos'] == player['pos'] ? 'correct' :'inner_card'}>{player6['pos']}</div>
-      <div className={player6['teamId'] == player['teamId'] ? 'correct' : 'inner_card'}>{team6}</div>
-      <div className={conference6 == conference ? 'correct' : 'inner_card'}>{conference6}</div>
-      </div>
-    </Card.Body>
-    </Card>
+    <PlayerCard guess={player6}
+      player={player}
+      team={team6}
+      picture={picture6}
+      conference={conference}
+      conference_guess={conference6}
+    />
     :
     <Card className={'card'}><Card.Title>6</Card.Title></Card>
   }
 
   {guesses >7 ?
-    <Card className={'card'}>
-    <Card.Title>
-      {player7["firstName"] + " " + player7['lastName']}
-    </Card.Title>
-    <Card.Img className={'pictures'} variant="top" src={`https://cdn.nba.com/headshots/nba/latest/1040x760/${picture7}.png`}/>
-    <Card.Body>
-      <div className={'inner_container'}>
-      <div className={(player7['collegeName'] == player['collegeName']) ? 'correct' : 'inner_card'}>{player7['collegeName']}</div>
-      <div className={player7['heightInches'] == player['heightInches'] && player7['heightFeet'] == player['heightFeet'] ? 'correct' : Math.abs(parseInt(player['heightInches']) - parseInt(player7['heightInches']))<=2 && player7['heightFeet'] == player['heightFeet']  ? 'almost' : 'inner_card'}>{player7['heightFeet'] + "'" + player7['heightInches']}</div>
-      <div className={player7['yearsPro'] == player['yearsPro'] ? 'correct' : 'inner_card'}>{"Years Pro: " + player7['yearsPro']}</div>
-      <div className={player7['pos'] == player['pos'] ? 'correct' :'inner_card'}>{player7['pos']}</div>
-      <div className={player7['teamId'] == player['teamId'] ? 'correct' : 'inner_card'}>{team7}</div>
-      <div className={conference7 == conference ? 'correct' : 'inner_card'}>{conference7}</div>
-      </div>
-    </Card.Body>
-    </Card>
+    <PlayerCard guess={player7}
+      player={player}
+      team={team7}
+      picture={picture7}
+      conference={conference}
+      conference_guess={conference7}
+    />
     :
     <Card className={'card'}><Card.Title>7</Card.Title></Card>
   }
 
   {guesses >8 ?
-    <Card className={'card'}>
-    <Card.Title>
-      {player8["firstName"] + " " + player8['lastName']}
-    </Card.Title>
-    <Card.Img className={'pictures'} variant="top" src={`https://cdn.nba.com/headshots/nba/latest/1040x760/${picture7}.png`}/>
-    <Card.Body>
-      <div className={'inner_container'}>
-      <div className={(player8['collegeName'] == player['collegeName']) ? 'correct' : 'inner_card'}>{player8['collegeName']}</div>
-      <div className={player8['heightInches'] == player['heightInches'] && player8['heightFeet'] == player['heightFeet'] ? 'correct' : Math.abs(parseInt(player['heightInches']) - parseInt(player8['heightInches']))<=2 && player8['heightFeet'] == player['heightFeet']  ? 'almost' : 'inner_card'}>{player8['heightFeet'] + "'" + player8['heightInches']}</div>
-      <div className={player8['yearsPro'] == player['yearsPro'] ? 'correct' : 'inner_card'}>{"Years Pro: " + player8['yearsPro']}</div>
-      <div className={player8['pos'] == player['pos'] ? 'correct' :'inner_card'}>{player7['pos']}</div>
-      <div className={player8['teamId'] == player['teamId'] ? 'correct' : 'inner_card'}>{team8}</div>
-      <div className={conference8 == conference ? 'correct' : 'inner_card'}>{conference8}</div>
-      </div>
-    </Card.Body>
-    </Card>
+    <PlayerCard guess={player8}
+      player={player}
+      team={team8}
+      picture={picture8}
+      conference={conference}
+      conference_guess={conference8}
+    />
     :
     <Card className={'card'}><Card.Title>8</Card.Title></Card>
   }
