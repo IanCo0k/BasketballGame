@@ -50,6 +50,7 @@ export default function App() {
   const [team8, setTeam8] = useState();
 
   const [conference, setConference] = useState();
+  const [division, setDivision] = useState();
 
   const [conference1, setConference1] = useState();
   const [conference2, setConference2] = useState();
@@ -59,6 +60,15 @@ export default function App() {
   const [conference6, setConference6] = useState();
   const [conference7, setConference7] = useState();
   const [conference8, setConference8] = useState();
+
+  const [division1, setDivision1] = useState();
+  const [division2, setDivision2] = useState();
+  const [division3, setDivision3] = useState();
+  const [division4, setDivision4] = useState();
+  const [division5, setDivision5] = useState();
+  const [division6, setDivision6] = useState();
+  const [division7, setDivision7] = useState();
+  const [division8, setDivision8] = useState();
 
   const [correct, setCorrect] = useState(false);
   const [allGuesses, setAllGuesses] = useState(false);
@@ -70,7 +80,8 @@ export default function App() {
     "teamName": "Atlanta Hawks",
     "simpleName": "Hawks",
     "conference": "East",
-    "location": "Atlanta"
+    "location": "Atlanta",
+    "division": "SE"
   },
   {
     "teamId": 1610612738,
@@ -78,7 +89,8 @@ export default function App() {
     "teamName": "Boston Celtics",
     "simpleName": "Celtics",
     "conference": "East",
-    "location": "Boston"
+    "location": "Boston",
+    "division": "ATL"
   },
   {
     "teamId": 1610612751,
@@ -86,7 +98,8 @@ export default function App() {
     "teamName": "Brooklyn Nets",
     "simpleName": "Nets",
     "conference": "East",
-    "location": "Brooklyn"
+    "location": "Brooklyn",
+    "division": "ATL"
   },
   {
     "teamId": 1610612766,
@@ -94,7 +107,8 @@ export default function App() {
     "teamName": "Charlotte Hornets",
     "simpleName": "Hornets",
     "conference": "East",
-    "location": "Charlotte"
+    "location": "Charlotte",
+    "division": "SE"
   },
   {
     "teamId": 1610612741,
@@ -102,7 +116,8 @@ export default function App() {
     "teamName": "Chicago Bulls",
     "simpleName": "Bulls",
     "conference": "East",
-    "location": "Chicago"
+    "location": "Chicago",
+    "division": "CEN"
   },
   {
     "teamId": 1610612739,
@@ -110,7 +125,8 @@ export default function App() {
     "teamName": "Cleveland Cavaliers",
     "simpleName": "Cavaliers",
     "conference": "East",
-    "location": "Cleveland"
+    "location": "Cleveland",
+    "division": "CEN"
   },
   {
     "teamId": 1610612742,
@@ -118,7 +134,8 @@ export default function App() {
     "teamName": "Dallas Mavericks",
     "simpleName": "Mavericks",
     "conference": "West",
-    "location": "Dallas"
+    "location": "Dallas",
+    "division": "SW"
   },
   {
     "teamId": 1610612743,
@@ -126,7 +143,8 @@ export default function App() {
     "teamName": "Denver Nuggets",
     "simpleName": "Nuggets",
     "conference": "West",
-    "location": "Denver"
+    "location": "Denver",
+    "division": "NW"
   },
   {
     "teamId": 1610612765,
@@ -134,7 +152,8 @@ export default function App() {
     "teamName": "Detroit Pistons",
     "simpleName": "Pistons",
     "conference": "East",
-    "location": "Detroit"
+    "location": "Detroit",
+    "division": "CEN"
   },
   {
     "teamId": 1610612744,
@@ -142,7 +161,8 @@ export default function App() {
     "teamName": "Golden State Warriors",
     "simpleName": "Warriors",
     "conference": "West",
-    "location": "Golden State"
+    "location": "Golden State",
+    "division": "PAC"
   },
   {
     "teamId": 1610612745,
@@ -150,7 +170,8 @@ export default function App() {
     "teamName": "Houston Rockets",
     "simpleName": "Rockets",
     "conference": "West",
-    "location": "Houston"
+    "location": "Houston",
+    "division": "SW"
   },
   {
     "teamId": 1610612754,
@@ -158,7 +179,8 @@ export default function App() {
     "teamName": "Indiana Pacers",
     "simpleName": "Pacers",
     "conference": "East",
-    "location": "Indiana"
+    "location": "Indiana",
+    "division": "CEN"
   },
   {
     "teamId": 1610612746,
@@ -166,7 +188,8 @@ export default function App() {
     "teamName": "Los Angeles Clippers",
     "simpleName": "Clippers",
     "conference": "West",
-    "location": "Los Angeles"
+    "location": "Los Angeles",
+    "division": "PAC"
   },
   {
     "teamId": 1610612747,
@@ -174,7 +197,8 @@ export default function App() {
     "teamName": "Los Angeles Lakers",
     "simpleName": "Lakers",
     "conference": "West",
-    "location": "Los Angeles"
+    "location": "Los Angeles",
+    "division": "PAC"
   },
   {
     "teamId": 1610612763,
@@ -182,7 +206,8 @@ export default function App() {
     "teamName": "Memphis Grizzlies",
     "simpleName": "Grizzlies",
     "conference": "West",
-    "location": "Memphis"
+    "location": "Memphis",
+    "division": "SW"
   },
   {
     "teamId": 1610612748,
@@ -190,7 +215,8 @@ export default function App() {
     "teamName": "Miami Heat",
     "simpleName": "Heat",
     "conference": "East",
-    "location": "Miami"
+    "location": "Miami",
+    "division": "SE"
   },
   {
     "teamId": 1610612749,
@@ -198,7 +224,8 @@ export default function App() {
     "teamName": "Milwaukee Bucks",
     "simpleName": "Bucks",
     "conference": "East",
-    "location": "Milwaukee"
+    "location": "Milwaukee",
+    "division": "CEN"
   },
   {
     "teamId": 1610612750,
@@ -206,7 +233,8 @@ export default function App() {
     "teamName": "Minnesota Timberwolves",
     "simpleName": "Timberwolves",
     "conference": "West",
-    "location": "Minnesota"
+    "location": "Minnesota",
+    "division": "NW"
   },
   {
     "teamId": 1610612740,
@@ -214,7 +242,8 @@ export default function App() {
     "teamName": "New Orleans Pelicans",
     "simpleName": "Pelicans",
     "conference": "West",
-    "location": "New Orleans"
+    "location": "New Orleans",
+    "division": "SW"
   },
   {
     "teamId": 1610612752,
@@ -222,7 +251,8 @@ export default function App() {
     "teamName": "New York Knicks",
     "simpleName": "Knicks",
     "conference": "East",
-    "location": "New York"
+    "location": "New York",
+    "division": "ATL"
   },
   {
     "teamId": 1610612760,
@@ -230,7 +260,8 @@ export default function App() {
     "teamName": "Oklahoma City Thunder",
     "simpleName": "Thunder",
     "conference": "West",
-    "location": "Oklahoma City"
+    "location": "Oklahoma City",
+    "division": "NW"
   },
   {
     "teamId": 1610612753,
@@ -238,7 +269,8 @@ export default function App() {
     "teamName": "Orlando Magic",
     "simpleName": "Magic",
     "conference": "East",
-    "location": "Orlando"
+    "location": "Orlando",
+    "division": "SE"
   },
   {
     "teamId": 1610612755,
@@ -246,7 +278,8 @@ export default function App() {
     "teamName": "Philadelphia 76ers",
     "simpleName": "76ers",
     "conference": "East",
-    "location": "Philadelphia"
+    "location": "Philadelphia",
+    "division": "ATL"
   },
   {
     "teamId": 1610612756,
@@ -254,7 +287,8 @@ export default function App() {
     "teamName": "Phoenix Suns",
     "simpleName": "Suns",
     "conference": "West",
-    "location": "Phoenix"
+    "location": "Phoenix",
+    "division": "SW"
   },
   {
     "teamId": 1610612757,
@@ -262,7 +296,8 @@ export default function App() {
     "teamName": "Portland Trail Blazers",
     "simpleName": "Trail Blazers",
     "conference": "West",
-    "location": "Portland"
+    "location": "Portland",
+    "division": "NW"
   },
   {
     "teamId": 1610612758,
@@ -270,7 +305,8 @@ export default function App() {
     "teamName": "Sacramento Kings",
     "simpleName": "Kings",
     "conference": "West",
-    "location": "Sacramento"
+    "location": "Sacramento",
+    "division": "PAC"
   },
   {
     "teamId": 1610612759,
@@ -278,7 +314,8 @@ export default function App() {
     "teamName": "San Antonio Spurs",
     "simpleName": "Spurs",
     "conference": "West",
-    "location": "San Antonio"
+    "location": "San Antonio",
+    "division": "SW"
   },
   {
     "teamId": 1610612761,
@@ -286,7 +323,8 @@ export default function App() {
     "teamName": "Toronto Raptors",
     "simpleName": "Raptors",
     "conference": "East",
-    "location": "Toronto"
+    "location": "Toronto",
+    "division": "ATL"
   },
   {
     "teamId": 1610612762,
@@ -294,7 +332,8 @@ export default function App() {
     "teamName": "Utah Jazz",
     "simpleName": "Jazz",
     "conference": "West",
-    "location": "Utah"
+    "location": "Utah",
+    "division": "NW"
   },
   {
     "teamId": 1610612764,
@@ -302,7 +341,8 @@ export default function App() {
     "teamName": "Washington Wizards",
     "simpleName": "Wizards",
     "conference": "East",
-    "location": "Washington"
+    "location": "Washington",
+    "division": "SE"
   }
 ]
 
@@ -328,6 +368,7 @@ export default function App() {
         for(var j=0; j<teamData.length; j++){
           if(parseInt(response.data.league['standard'][random]['teamId']) === parseInt(teamData[j]['teamId'])){
             setConference(teamData[j]['conference']);
+            setDivision(teamData[j]['division'])
             console.log(teamData[j]['conference']);
           }
         }
@@ -385,6 +426,7 @@ export default function App() {
                     if(parseInt(database[i]['teamId']) === parseInt(teamData[j]['teamId'])){
                       setTeam(teamData[j]['simpleName']);
                       setConference1(teamData[j]['conference']);
+                      setDivision1(teamData[j]['division']);
                     }
                   }
                   break;
@@ -397,6 +439,7 @@ export default function App() {
                     if(parseInt(database[i]['teamId']) === parseInt(teamData[j]['teamId'])){
                       setTeam2(teamData[j]['simpleName']);
                       setConference2(teamData[j]['conference']);
+                      setDivision2(teamData[j]['division']);
                     }
                   }
                   break;
@@ -409,6 +452,7 @@ export default function App() {
                     if(parseInt(database[i]['teamId']) === parseInt(teamData[j]['teamId'])){
                       setTeam3(teamData[j]['simpleName']);
                       setConference3(teamData[j]['conference']);
+                      setDivision3(teamData[j]['division']);
                     }
                   }
                   break;
@@ -421,6 +465,7 @@ export default function App() {
                     if(parseInt(database[i]['teamId']) === parseInt(teamData[j]['teamId'])){
                       setTeam4(teamData[j]['simpleName']);
                       setConference4(teamData[j]['conference']);
+                      setDivision4(teamData[j]['division']);
                     }
                   }
                   break;
@@ -433,6 +478,7 @@ export default function App() {
                     if(parseInt(database[i]['teamId']) === parseInt(teamData[j]['teamId'])){
                       setTeam5(teamData[j]['simpleName']);
                       setConference5(teamData[j]['conference']);
+                      setDivision5(teamData[j]['division']);
                     }
                   }
                   break;
@@ -445,6 +491,7 @@ export default function App() {
                     if(parseInt(database[i]['teamId']) === parseInt(teamData[j]['teamId'])){
                       setTeam6(teamData[j]['simpleName']);
                       setConference6(teamData[j]['conference']);
+                      setDivision6(teamData[j]['division']);
                     }
                   }
                   break;
@@ -457,6 +504,7 @@ export default function App() {
                     if(parseInt(database[i]['teamId']) === parseInt(teamData[j]['teamId'])){
                       setTeam7(teamData[j]['simpleName']);
                       setConference7(teamData[j]['conference']);
+                      setDivision7(teamData[j]['division']);
                     }
                   }
                   break;
@@ -469,6 +517,7 @@ export default function App() {
                     if(parseInt(database[i]['teamId']) === parseInt(teamData[j]['teamId'])){
                       setTeam8(teamData[j]['simpleName']);
                       setConference8(teamData[j]['conference']);
+                      setDivision8(teamData[j]['division']);
                     }
                   }
                   break;
@@ -505,6 +554,8 @@ export default function App() {
         picture={picture1}
         conference={conference}
         conference_guess={conference1}
+        division={division}
+        division_guess={division1}
       />
 
       :
@@ -519,6 +570,8 @@ export default function App() {
         picture={picture2}
         conference={conference}
         conference_guess={conference2}
+        division={division}
+        division_guess={division2}
       />
     :
     <Card className={'card'}><Card.Title>2</Card.Title></Card>
@@ -531,6 +584,8 @@ export default function App() {
       picture={picture3}
       conference={conference}
       conference_guess={conference3}
+      division={division}
+      division_guess={division3}
     />
     :
     <Card className={'card'}><Card.Title>3</Card.Title></Card>
@@ -543,6 +598,8 @@ export default function App() {
       picture={picture4}
       conference={conference}
       conference_guess={conference4}
+      division={division}
+      division_guess={division4}
     />
     :
     <Card className={'card'}><Card.Title>4</Card.Title></Card>
@@ -555,6 +612,8 @@ export default function App() {
       picture={picture5}
       conference={conference}
       conference_guess={conference5}
+      division={division}
+      division_guess={division5}
     />
     :
     <Card className={'card'}><Card.Title>5</Card.Title></Card>
@@ -567,6 +626,8 @@ export default function App() {
       picture={picture6}
       conference={conference}
       conference_guess={conference6}
+      division={division}
+      division_guess={division6}
     />
     :
     <Card className={'card'}><Card.Title>6</Card.Title></Card>
@@ -579,6 +640,8 @@ export default function App() {
       picture={picture7}
       conference={conference}
       conference_guess={conference7}
+      division={division}
+      division_guess={division7}
     />
     :
     <Card className={'card'}><Card.Title>7</Card.Title></Card>
@@ -591,6 +654,8 @@ export default function App() {
       picture={picture8}
       conference={conference}
       conference_guess={conference8}
+      division={division}
+      division_guess={division8}
     />
     :
     <Card className={'card'}><Card.Title>8</Card.Title></Card>
