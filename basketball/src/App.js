@@ -288,7 +288,7 @@ export default function App() {
     "simpleName": "Suns",
     "conference": "West",
     "location": "Phoenix",
-    "division": "SW"
+    "division": "PAC"
   },
   {
     "teamId": 1610612757,
