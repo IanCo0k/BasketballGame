@@ -6,7 +6,7 @@ import Route from 'react-router-dom';
 export default function App(){
   return(
     <div>
-    HEllo!
+    <a href="/#/wardell">ClicK EM<a>
     </div>
   )
 }
