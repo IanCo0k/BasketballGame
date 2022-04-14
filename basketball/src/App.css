@@ -1,5 +1,5 @@
 .container{
-  background: #17408B;
+  background: #003249;
   align-items: center;
   text-align: center;
   color: white;
@@ -21,7 +21,7 @@
 }
 
 body{
-  background-color: #C9082A;
+  background-color: #007EA7;
 }
 
 img{
@@ -54,7 +54,7 @@ a{
 .button{
   border: none;
   border-radius: 10px;
-  background: #C9082A;
+  background: #007EA7;
   max-width: 20vh;
   min-width: 20vh;
   padding: 10px;
@@ -87,7 +87,7 @@ a{
   max-height: 45vh;
   font-weight: bold;
   font-size: 3vh;
-  background-color: #FFFFFF;
+  background-color: #EFE9F4;
   text-align: center;
   margin: 25px;
   border-radius: 10px;
@@ -106,7 +106,7 @@ a{
   width: 35%;
   max-height:35%;
   max-width: 35%;
-  background-color: #17408B;
+  background-color: #003249;
   color: white;
   text-align: center;
   border-radius: 10px;
