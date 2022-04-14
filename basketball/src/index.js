@@ -4,16 +4,16 @@ import './index.css';
 import App from './App';
 import Wardell from './Wardell';
 import reportWebVitals from './reportWebVitals';
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import {HashRouter as Router, Routes, Route} from 'react-router-dom';
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <Router>
       <Routes>
         <Route path="/" element={<App/>}/>
         <Route path="/wardell" element={<Wardell/>}/>
       </Routes>
-    </BrowserRouter>
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );
