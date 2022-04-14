@@ -1,6 +1,5 @@
 import React from 'react';
 import Wardell from './Wardell';
-import Testing from './Testing';
 import Route from 'react-router-dom';
 import {Card} from 'react-bootstrap';
 import styles from './App.css'
@@ -15,9 +14,11 @@ export default function App(){
     </div>
 
     <div className={'card_container'}>
+    <a href="/#/articles">
       <Card>
       <Card.Title>Articles</Card.Title>
       </Card>
+    </a>
 
       <a href="/#/wardell">
       <Card>
