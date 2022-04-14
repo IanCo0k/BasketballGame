@@ -13,7 +13,7 @@ export default function App(){
       </div>
     </div>
 
-    <div className={'card_container'}>
+    <div className={'card_container normal_card_header'}>
     <a href="/#/articles">
       <Card>
       <Card.Title>Articles</Card.Title>

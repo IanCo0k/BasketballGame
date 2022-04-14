@@ -73,6 +73,15 @@ a{
   justify-content: center;
 }
 
+.article_body{
+  margin: auto;
+  background: #007EA7;
+}
+
+.normal_card_header{
+  margin-top: 20vh;
+}
+
 .card_header{
   vertical-align: top;
   padding: 200px;
@@ -118,8 +127,9 @@ a{
 }
 
 .pictures{
-  width: 85%;
-  height: 65%;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .blank_picture{
@@ -160,6 +170,15 @@ a{
   align-items: center;
   justify-content: center;
   font-size: 40%;
+}
+
+.blurbs{
+  background-color: #007EA7;
+  color: white;
+  font-size: 1.5vh;
+  margin-top: 2vh;
+  padding: 5px;
+  border-radius: 5px;
 }
 
 .almost{

@@ -5,6 +5,13 @@ import App from './App';
 import Wardell from './Wardell';
 import Articles from './Articles';
 import HawksBeatHornets from './articles/HawksBeatHornets';
+import NBAAwards from './NBAAwards';
+import MVP from './articles/MVP';
+import COTY from './articles/COTY';
+import ROTY from './articles/ROTY';
+import Sixth from './articles/Sixth';
+import DPOY from './articles/DPOY';
+import MIP from './articles/MIP';
 import reportWebVitals from './reportWebVitals';
 import {HashRouter as Router, Routes, Route} from 'react-router-dom';
 
@@ -16,6 +23,13 @@ ReactDOM.render(
         <Route path="/wardell" element={<Wardell/>}/>
         <Route path='/articles' element={<Articles/>}/>
         <Route path='/hornetsvhawks' element={<HawksBeatHornets/>}/>
+        <Route path='/awards' element={<NBAAwards/>}/>
+        <Route path='/mvp' element={<MVP/>}/>
+        <Route path='/coty' element={<COTY/>}/>
+        <Route path='/roty' element={<ROTY/>}/>
+        <Route path='/dpoy' element={<DPOY/>}/>
+        <Route path='/sixth' element={<Sixth/>}/>
+        <Route path='/mip' element={<MIP/>}/>
       </Routes>
     </Router>
   </React.StrictMode>,

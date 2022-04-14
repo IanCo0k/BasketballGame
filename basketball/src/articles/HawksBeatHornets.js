@@ -1,5 +1,6 @@
 import React from 'react'
 import {Card} from 'react-bootstrap';
+import styles from '../App.css';
 
 export default function HawksBeatHornets(){
   return(
@@ -10,7 +11,7 @@ export default function HawksBeatHornets(){
       </div>
     </div>
 
-    <div className={'card_container'}>
+    <div className={'article_body'}>
       <h1>Lamelo OOKA BLOAT! </h1>
       <p>------------</p>
       <h1>Trae OOKA GOAT!</h1>
