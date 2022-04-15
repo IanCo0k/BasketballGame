@@ -4,7 +4,6 @@ import './index.css';
 import App from './App';
 import Wardell from './Wardell';
 import Articles from './Articles';
-import HawksBeatHornets from './articles/HawksBeatHornets';
 import NBAAwards from './NBAAwards';
 import MVP from './articles/MVP';
 import COTY from './articles/COTY';
@@ -22,7 +21,6 @@ ReactDOM.render(
         <Route path="/" element={<App/>}/>
         <Route path="/wardell" element={<Wardell/>}/>
         <Route path='/articles' element={<Articles/>}/>
-        <Route path='/hornetsvhawks' element={<HawksBeatHornets/>}/>
         <Route path='/awards' element={<NBAAwards/>}/>
         <Route path='/mvp' element={<MVP/>}/>
         <Route path='/coty' element={<COTY/>}/>

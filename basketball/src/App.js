@@ -9,7 +9,7 @@ export default function App(){
     <>
     <div className={'container'}>
       <div className={'header_container'}>
-      <h1 className={'header_text'}>Wardell</h1>
+      <h1 className={'header_text'}>Ooka Sports</h1>
       </div>
     </div>
 
@@ -22,7 +22,7 @@ export default function App(){
 
       <a href="/#/wardell">
       <Card>
-      <Card.Title>Wardell</Card.Title>
+      <Card.Title>Ooka (NBA Wordle)</Card.Title>
       </Card>
       </a>
     </div>

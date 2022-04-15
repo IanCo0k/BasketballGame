@@ -401,7 +401,7 @@ export default function Wardell() {
     <div className={'container'}>
     <div className={'header_container'}>
       <div className={'left-half'}>
-        <h1 className={correct ? 'correct_header_text' : 'header_text'}>{allGuesses && correct ? 'Wrong. Click picture to reset': !correct ? 'Wardell' : 'Correct! Click picture to reset.'}</h1>
+        <h1 className={correct ? 'correct_header_text' : 'header_text'}>{allGuesses && correct ? 'Wrong. Click picture to reset': !correct ? 'Ooka' : 'Correct! Click picture to reset.'}</h1>
             <form className={'form'} onSubmit={(e) => {
               e.preventDefault();
               setValue("");

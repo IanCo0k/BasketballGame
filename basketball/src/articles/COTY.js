@@ -30,7 +30,7 @@ export default function COTY(){
 
       <Card className={'card'}>
         <Card.Title>Nicks's Pick: Taylor Jenkins</Card.Title>
-        <Card.Img variant={'top'} className={'pictures'} src={'https://www.nba.com/grizzlies/sites/grizzlies/files/201211-taylor-jenkins-1000x1000.jpg'}></Card.Img>
+        <Card.Img variant={'top'} className={'pictures'} src={'https://www.nba.com/grizzlies/sites/grizzlies/files/220103-jenkins-cotm-1554x884.jpg'}></Card.Img>
         <Card.Body className={'inner_container'}>
         <div className={'blurbs'}> Memphis gets the 2 seed and did a good portion of winning without Ja. This is a young team that not a lot of people thought would be in the spot they are already. Very well coached team.</div>
         </Card.Body>
@@ -41,6 +41,13 @@ export default function COTY(){
         <Card.Img variant={'top'} className={'pictures'} src={'https://cdn.vox-cdn.com/uploads/chorus_asset/file/22321661/08_1012324552_Finch1216.jpg'}></Card.Img>
         <Card.Body className={'inner_container'}>
         <div className={'blurbs'}>Finch led the Timberwolves from a 23-49 record a year ago to a 46-36 record and a 7 seed in the play-in tournament this year.  Crazy turnaround between last season and this one for the T-Wolves.</div>
+        </Card.Body>
+      </Card>
+
+      <Card className={'card'}>
+        <Card.Title>Jared's Pick: Monty Williams</Card.Title>
+        <Card.Img variant={'top'} className={'pictures'} src={'https://images2.minutemediacdn.com/image/fetch/w_2000,h_2000,c_fit/https%3A%2F%2Fvalleyofthesuns.com%2Fwp-content%2Fuploads%2Fgetty-images%2F2017%2F07%2F1194568519.jpeg'}></Card.Img>
+        <Card.Body className={'inner_container'}>
         </Card.Body>
       </Card>
     </div>

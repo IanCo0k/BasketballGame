@@ -43,6 +43,14 @@ export default function MVP(){
         <div className={'blurbs'}>Leads team in minutes, points, field goals made, rebounds, and blocks and has led them to 3 seed in the conference.  Best player on floor night in night out</div>
         </Card.Body>
       </Card>
+
+      <Card className={'card'}>
+        <Card.Title>Jared's Pick: Nikola Jokic</Card.Title>
+        <Card.Img variant={'top'} className={'pictures'} src={'https://cdn.nba.com/headshots/nba/latest/1040x760/203999.png'}></Card.Img>
+        <Card.Body className={'inner_container'}>
+        <div className={'blurbs'}>Jokic put up all around numbers as a big man without athletically dominating anyone. Did it all even though his best teammate didn’t return from injury</div>
+        </Card.Body>
+      </Card>
     </div>
     </>
   )

@@ -43,6 +43,13 @@ export default function MIP(){
         <div className={'blurbs'}>Increased at every single statistical category since a season ago, and played himself into the starting lineup.  Started 7 games last season, to 51 games this year.  </div>
         </Card.Body>
       </Card>
+
+      <Card className={'card'}>
+        <Card.Title>Jared's Pick: Jordan Poole</Card.Title>
+        <Card.Img variant={'top'} className={'pictures'} src={'https://cdn.nba.com/headshots/nba/latest/1040x760/1629673.png'}></Card.Img>
+        <Card.Body className={'inner_container'}>
+        </Card.Body>
+      </Card>
     </div>
     </>
   )

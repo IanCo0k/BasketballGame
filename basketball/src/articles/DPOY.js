@@ -43,6 +43,14 @@ export default function DPOY(){
         <div className={'blurbs'}>Defensive rebound leader, leads to chances at other end</div>
         </Card.Body>
       </Card>
+
+      <Card className={'card'}>
+        <Card.Title>Jared's Pick: Marcus Smart</Card.Title>
+        <Card.Img variant={'top'} className={'pictures'} src={'https://cdn.nba.com/headshots/nba/latest/1040x760/203935.png'}></Card.Img>
+        <Card.Body className={'inner_container'}>
+        <div className={'blurbs'}>Celtics made a dramatic 2nd half turn around to get all the way to the 2 seed. Smart played a key role in that turn around.</div>
+        </Card.Body>
+      </Card>
     </div>
     </>
   )

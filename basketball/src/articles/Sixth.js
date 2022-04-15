@@ -43,6 +43,14 @@ export default function Sixth(){
         <div className={'blurbs'}>Averages starter numbers but doesn’t start, not close for anybody else.</div>
         </Card.Body>
       </Card>
+
+      <Card className={'card'}>
+        <Card.Title>Jared's Pick: Tyler Herro</Card.Title>
+        <Card.Img variant={'top'} className={'pictures'} src={'https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/4395725.png'}></Card.Img>
+        <Card.Body className={'inner_container'}>
+        <div className={'blurbs'}>Need we explain...</div>
+        </Card.Body>
+      </Card>
     </div>
     </>
   )

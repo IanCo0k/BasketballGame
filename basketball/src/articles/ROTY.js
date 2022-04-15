@@ -43,6 +43,14 @@ export default function COTY(){
         <div className={'blurbs'}>Made an instant impact on the Pistons, and has put up numbers that haven’t been seen in many years.  Even though Pistons haven’t made the playoffs, Cade is a dynamic player who draws focus from other teams defensively unlike any other rookie.  Best rookie of his class.</div>
         </Card.Body>
       </Card>
+
+      <Card className={'card'}>
+        <Card.Title>Jared's Pick: Cade Cunningham</Card.Title>
+        <Card.Img variant={'top'} className={'pictures'} src={'https://cdn.nba.com/headshots/nba/latest/1040x760/1630595.png'}></Card.Img>
+        <Card.Body className={'inner_container'}>
+        <div className={'blurbs'}></div>
+        </Card.Body>
+      </Card>
     </div>
     </>
   )
