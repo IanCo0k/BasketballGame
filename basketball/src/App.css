@@ -119,13 +119,6 @@ a{
   background-color: #003249;
 }
 
-.card:active{
-  transition: .5s;
-  box-shadow: 0px 0px;
-  color: white;
-  background-color: #003249;
-}
-
 .inner_card{
   margin: 5px;
   padding: 10px;
