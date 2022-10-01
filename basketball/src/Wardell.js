@@ -535,7 +535,6 @@ export default function Wardell() {
               setCorrect(true);
             }
             setValue('');
-            console.log(guesses);
           }
           }}>Guess</button>
           </form>
